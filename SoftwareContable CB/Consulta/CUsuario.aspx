@@ -11,9 +11,10 @@
        </div>
 
        
-      <div class="form-group container"> 
-        
-                      <div class="row" style="align-items:center; ">
+    
+                            <div class="container align-content-center">
+
+    <div class="row align-items-sm-center" style=" justify-content:center; height:70px;" >
                            
                 <label for="TipodeFiltro" style="Width:50px">Filtro:</label>
                           <div style="width:220px">
@@ -23,7 +24,10 @@
                       <asp:ListItem>Nombre</asp:ListItem>
                       <asp:ListItem>Cedula</asp:ListItem>
                       <asp:ListItem>Telefono</asp:ListItem>
+                      <asp:ListItem>Celular</asp:ListItem>
+                      <asp:ListItem>E-mail</asp:ListItem>
                       <asp:ListItem>Tipo de Acceso</asp:ListItem>
+                      <asp:ListItem>Contraseña</asp:ListItem>
                     
                 </asp:DropDownList>
                               
@@ -33,12 +37,33 @@
                         <asp:TextBox class="form-control" ID="TextCriterio" runat="server" style="width:350px"></asp:TextBox>
                 
                         </div>
-                          <asp:Button ID="ButtonBuscar" runat="server" Text="Buscar" class="btn btn-info btn-md" />
+                          <asp:Button ID="ButtonBuscar" runat="server" Text="Buscar" class="btn btn-info btn-md" OnClick="ButtonBuscar_Click" />
                           
-                      
-                       
+                
                         
+    
+                        
+            </div>
+                           
+            </div> 
 
+               <div class="container align-content-center">
+    <div class="row align-items-sm-center" style=" justify-content:center;" >
+      
+              
+      <asp:Label for="DesdeTextBox"  ID="Label1" runat="server" Text="Desde:"></asp:Label>
+        <asp:TextBox class="form-control" ID="DesdeTextBox" runat="server" TextMode="Date" Width="200"></asp:TextBox>
+       
+        <asp:Label for="HastaTextBox" ID="Label2" runat="server" Text="Hasta:"></asp:Label>
+        <asp:TextBox class="form-control" ID="HastaTextBox" runat="server" TextMode="Date"  Width="200"></asp:TextBox>
+
+             </div>
+                           
+            </div> 
+
+         <div class="container align-content-center">
+    <div class="row align-items-sm-center" style=" justify-content:center;" >
+      
                         <div class="container form-group "> 
                       <div class="row">
                           <div class="form-row justify-content-center">
@@ -46,12 +71,19 @@
                 <AlternatingRowStyle BackColor="LightSkyBlue" />
                 <Columns>
                     <asp:BoundField DataField="UsuarioId" HeaderText="UsuarioId"/>
+                    
+                    <asp:BoundField DataField="Fecha" HeaderText="Fecha"/>
                     <asp:BoundField DataField="Nombre" HeaderText="Nombre"/>
                     <asp:BoundField DataField="Cedula" HeaderText="Cedula"/>
                     <asp:BoundField DataField="Telefono" HeaderText="Telefono"/>
+                    <asp:BoundField DataField="Celular" HeaderText="Celular"/>
                     <asp:BoundField DataField="Usuario" HeaderText="Usuario"/>
+                    <asp:BoundField DataField="Email" HeaderText="Telefono"/>
                     <asp:BoundField DataField="TipodeAcceso" HeaderText="TipodeAcceso"/>
                     <asp:BoundField DataField="Contraseña" HeaderText="Contraseña"/>
+
+                   
+     
                     
                 </Columns>
                 <HeaderStyle BackColor="LightCyan" Font-Bold="True" />
@@ -65,7 +97,9 @@
             </div>
                            
             </div> 
+
     
-    
+  
+
 
 </asp:Content>

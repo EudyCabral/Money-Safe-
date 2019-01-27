@@ -29,11 +29,11 @@
 
               <div class="col-md-5">
       
-            <asp:Button ID="ButtonBuscar" runat="server" Text="Buscar" class="btn btn-info btn-md" />
+            <asp:Button ID="ButtonBuscar" runat="server" Text="Buscar" class="btn btn-info btn-md" OnClick="ButtonBuscar_Click" />
          
           </div>   
             
-                <asp:TextBox ID="Fecha" runat="server" class="form-control" type="date" Width="200px"></asp:TextBox>
+                <asp:TextBox ID="FechaTextbox" runat="server" class="form-control" type="date" Width="200px"> </asp:TextBox>
           
 
 
@@ -93,12 +93,12 @@
 
 
 
-                <asp:Button ID="ButtonNuevo" runat="server" Text="Nuevo" class="btn btn-info" />
+                <asp:Button ID="ButtonNuevo" runat="server" Text="Nuevo" class="btn btn-info" OnClick="ButtonNuevo_Click" />
 
 
-                <asp:Button ID="ButtonGuardar" runat="server" Text="Guardar" class="btn btn-success" />
+                <asp:Button ID="ButtonGuardar" runat="server" Text="Guardar" class="btn btn-success" OnClick="ButtonGuardar_Click" />
 
-                <asp:Button ID="ButtonEliminar" runat="server" Text="Eliminar" class="btn btn-danger" />
+                <asp:Button ID="ButtonEliminar" runat="server" Text="Eliminar" class="btn btn-danger" OnClick="ButtonEliminar_Click" />
 
 
             </div>
