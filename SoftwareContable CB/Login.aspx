@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="SoftwareContable_CB.Login" %>
+﻿<%@ Page Title="Login" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="SoftwareContable_CB.Login" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -10,7 +10,7 @@
 
                 <div class="card-header " style="background-color:forestgreen">
 
-                    <h3>Log In In</h3>
+                    <h3>Log In</h3>
 
                     <div class="d-flex justify-content-end social_icon">
 
@@ -59,7 +59,7 @@
                         </div>
 
                         <div class="form-group">
-                            <asp:Button style="background-color:forestgreen" ID="ButtonLogin" runat="server" Text="Login" class="btn float-right login_btn"    />
+                            <asp:Button style="background-color:forestgreen" ID="ButtonLogin" runat="server" Text="Login" class="btn float-right login_btn" OnClick="ButtonLogin_Click"    />
                           
                         </div>
 

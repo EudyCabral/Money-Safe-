@@ -103,11 +103,14 @@ namespace SoftwareContable_CB.Registros
             if (usuario != null)
             {
                 LlenaCampos(usuario);
+
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script:
+               "toastr.success('Encontrado','Exito',{ 'progressBar': true,'positionClass': 'toast-bottom-right'});", addScriptTags: true);
             }
             else
             {
-                Response.Write("<script>alert('Usuario no encontrado');</script>");
-
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script:
+             "toastr.info('Numero de Registro de Usuario no Existe','No Existe',{ 'progressBar': true,'positionClass': 'toast-bottom-right'});", addScriptTags: true);
             }
         }
 
@@ -119,36 +122,30 @@ namespace SoftwareContable_CB.Registros
 
             bool paso = false;
 
-
-
-            //todo: validaciones adicionales
-
             if (usuarios.UsuarioId == 0)
             {
                 paso = repositorio.Guardar(usuarios);
 
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('Guardado');", addScriptTags: true);
             }
 
             else
             {
                 paso = repositorio.Modificar(usuarios);
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('Modificado');", addScriptTags: true);
-
+               
             }
                 if (paso)
 
                 {
-                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script: "toastr['success']('Guardado');", addScriptTags: true);
-                    MostrarMensaje(TiposMensaje.Success, "Registro Exitoso!");
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script:
+                 "toastr.success('Usuario Registrado','Exito',{ 'progressBar': true,'positionClass': 'toast-bottom-right'});", addScriptTags: true);
 
-
-                }
+                 }
 
                 else
 
                 {
-                    MostrarMensaje(TiposMensaje.Error, "No fue posible Guardar el Registro");
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script:
+                 "toastr.error('No pudo Guardar','Fallo',{ 'progressBar': true,'positionClass': 'toast-bottom-right'});", addScriptTags: true);
                 }
             Limpiar();
         }
@@ -159,19 +156,19 @@ namespace SoftwareContable_CB.Registros
 
             int id = Convert.ToInt32(usuarioid.Text);
 
+            if (repositorio.Eliminar(id))
+            {
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script:
+              "toastr.Success('Usuario a sido Borrado','Eliminado',{ 'progressBar': true,'positionClass': 'toast-bottom-right'});", addScriptTags: true);
 
-
-            var usuario = repositorio.Buscar(id);
-
-
-
-            if (usuario == null)
-
-                MostrarMensaje(TiposMensaje.Error, "Registro no encontrado");
-
+                Limpiar();
+            }
             else
+            {
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script:
+              "toastr.info('Este Numero de Usuario no Existe','Informacion',{ 'progressBar': true,'positionClass': 'toast-bottom-right'});", addScriptTags: true);
+            }
 
-                repositorio.Eliminar(id);
         }
 
 
