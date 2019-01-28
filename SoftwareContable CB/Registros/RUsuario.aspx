@@ -1,8 +1,11 @@
 ﻿<%@ Page Title="Registro Usuario" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="RUsuario.aspx.cs" Inherits="SoftwareContable_CB.Registros.RUsuario" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:ScriptManager ID="ScriptManager" runat="server"></asp:ScriptManager>
 
     <div class="form-group container">
 
@@ -18,7 +21,7 @@
 
             <div style="width: 380px">
 
-                <asp:TextBox Width="350" ID="usuarioid" runat="server" placeholder="0" class="form-control" type="number"></asp:TextBox>
+                <asp:TextBox Width="350" ID="usuarioid" runat="server" placeholder="0" class="form-control" type="number">0</asp:TextBox>
             </div>
 
             <div class="col-md-5">
@@ -28,8 +31,6 @@
             </div>
 
             <asp:TextBox ID="FechaTextbox" runat="server" class="form-control" type="date" Width="200px"> </asp:TextBox>
-
-
 
         </div>
 
@@ -45,19 +46,22 @@
             <label for="cedulatextbox">Cedula :</label>
             <asp:TextBox class="form-control" runat="server" ID="cedulatextbox" type="text" Width="350px"></asp:TextBox>
 
+            <ajaxToolkit:MaskedEditExtender ID="MaskedEditExtenderced" runat="server" BehaviorID="cedulatextbox_MaskedEditExtender" MaskType="Number " ClearMaskOnLostFocus="true" Mask="999-9999999-9" TargetControlID="cedulatextbox"></ajaxToolkit:MaskedEditExtender>
+
             <label for="Telefonoinput">Telefono :</label>
             <asp:TextBox runat="server" class="form-control" ID="Telefonoinput" type="tel" Width="350px"></asp:TextBox>
 
+            <ajaxToolkit:MaskedEditExtender ID="Telefonoinput_MaskedEditExtender" runat="server" BehaviorID="Telefonoinput_MaskedEditExtender" MaskType="Number " ClearMaskOnLostFocus="true" Mask="(999)-999-9999" TargetControlID="Telefonoinput"></ajaxToolkit:MaskedEditExtender>
 
             <label for="celularinput">Celular :</label>
             <asp:TextBox runat="server" class="form-control" ID="celularinput" type="tel" Width="350px"></asp:TextBox>
+            <ajaxToolkit:MaskedEditExtender ID="MaskedEditExtendercel" runat="server" BehaviorID="celularinput_MaskedEditExtender" MaskType="Number " ClearMaskOnLostFocus="true" Mask="(999)-999-9999" TargetControlID="celularinput"></ajaxToolkit:MaskedEditExtender>
 
             <label for="Usuarioinput">Nombre Usuario :</label>
             <asp:TextBox runat="server" class="form-control" ID="Usuarioinput" type="text" Width="350px"></asp:TextBox>
 
             <label for="email">E-Mail :</label>
             <asp:TextBox runat="server" class="form-control" ID="email" type="text" Width="350px"></asp:TextBox>
-
 
             <label for="TipodeAccesodrop">TipodeAcceso :</label>
             <asp:DropDownList class="form-control" ID="TipodeAccesodrop" runat="server" for="TipodeAccesolb" Width="350px">
@@ -92,9 +96,6 @@
         </div>
 
     </div>
-
-
-
 
 </asp:Content>
 

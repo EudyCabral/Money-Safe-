@@ -14,8 +14,13 @@ namespace SoftwareContable_CB.Consulta
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            DesdeTextBox.Text= DateTime.Now.ToString("yyyy-MM-dd");
-            HastaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            if (!Page.IsPostBack)
+            {
+                DesdeTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
+                HastaTextBox.Text = DateTime.Now.ToString("yyyy-MM-dd");
+
+            }
+            
         }
 
         protected void ButtonBuscar_Click(object sender, EventArgs e)
@@ -28,9 +33,21 @@ namespace SoftwareContable_CB.Consulta
             {
                 case 0://ID
                     id = Convert.ToInt32(TextCriterio.Text);
-                    filtro = c => c.UsuarioId == id;
+                    if (CheckBoxFecha.Checked == true)
+                    {
+                        filtro = x => x.UsuarioId == id && (x.Fecha >= Convert.ToDateTime(DesdeTextBox.Text) && x.Fecha <= Convert.ToDateTime(HastaTextBox.Text));
+                    }
+                    else
+                    {
+                        filtro = c => c.UsuarioId == id;
+                    }
                     break;
-                case 1:// nombre
+
+                case 1:// Usuario
+                    filtro = c => c.Usuario.Contains(TextCriterio.Text);
+                    break;
+
+                case 2:// nombre
                     filtro = c => c.Nombre.Contains(TextCriterio.Text);
                     break;
 
@@ -46,26 +63,26 @@ namespace SoftwareContable_CB.Consulta
                     filtro = c => c.Celular.Equals(TextCriterio.Text);
                     break;
 
-                case 6:// Usuario
-                    filtro = c => c.Usuario.Contains(TextCriterio.Text);
-                    break;
-
-                case 7:// Email
+                case 6:// Email
                     filtro = c => c.Email.Contains(TextCriterio.Text);
                     break;
 
-                case 8:// TipodeAcceso
+                case 7:// TipodeAcceso
                     filtro = c => c.TipodeAcceso.Contains(TextCriterio.Text);
                     break;
 
-                case 9:// Contraseña
+                case 8:// Contraseña
                     filtro = c => c.Contraseña.Contains(TextCriterio.Text);
+                    break;
+
+                case 9:// Todos
+                    filtro = x => true;
                     break;
 
             }
 
-            UsuarioGridView.DataSource = repositorio.GetList(filtro);
-            UsuarioGridView.DataBind();
+             UsuarioGridView.DataSource = repositorio.GetList(filtro);
+                UsuarioGridView.DataBind();
         }
     }
     

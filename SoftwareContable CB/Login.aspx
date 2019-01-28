@@ -70,13 +70,13 @@
                 <div class="card-footer" style="background-color:forestgreen">
 
                     <div class="d-flex justify-content-center links">
-                        Don't have an account?<a href="#">Sign Up</a>
+                        ¿No tienes una cuenta?<a href="http://localhost:57890/Informacion/Informacion.aspx">¿Como Registrarte?</a>
 
                     </div>
 
                     <div class="d-flex justify-content-center">
 
-                        <a href="#">Forgot your password?</a>
+                        <a href="http://localhost:57890/Informacion/Informacion.aspx">¿Olvidaste tu contraseña?</a>
 
                     </div>
 

@@ -13,6 +13,15 @@ namespace SoftwareContable_CB.Registros {
     public partial class RUsuario {
         
         /// <summary>
+        /// ScriptManager control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager;
+        
+        /// <summary>
         /// usuarioid control.
         /// </summary>
         /// <remarks>
@@ -58,6 +67,15 @@ namespace SoftwareContable_CB.Registros {
         protected global::System.Web.UI.WebControls.TextBox cedulatextbox;
         
         /// <summary>
+        /// MaskedEditExtenderced control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.MaskedEditExtender MaskedEditExtenderced;
+        
+        /// <summary>
         /// Telefonoinput control.
         /// </summary>
         /// <remarks>
@@ -67,6 +85,15 @@ namespace SoftwareContable_CB.Registros {
         protected global::System.Web.UI.WebControls.TextBox Telefonoinput;
         
         /// <summary>
+        /// Telefonoinput_MaskedEditExtender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.MaskedEditExtender Telefonoinput_MaskedEditExtender;
+        
+        /// <summary>
         /// celularinput control.
         /// </summary>
         /// <remarks>
@@ -74,6 +101,15 @@ namespace SoftwareContable_CB.Registros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox celularinput;
+        
+        /// <summary>
+        /// MaskedEditExtendercel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.MaskedEditExtender MaskedEditExtendercel;
         
         /// <summary>
         /// Usuarioinput control.

@@ -16,11 +16,12 @@ namespace SoftwareContable_CB.Registros
 
             if (!Page.IsPostBack)
             {
+                usuarioid.Text = "0";
                 FechaTextbox.Text = DateTime.Now.ToString("yyyy-MM-dd");
             }
-          
-        }
 
+        }
+       
         public void MostrarMensaje(TiposMensaje tipo, string mensaje)
 
         {
@@ -78,7 +79,7 @@ namespace SoftwareContable_CB.Registros
         private void Limpiar()
 
         {
-            usuarioid.Text = "";
+            usuarioid.Text = "0";
             FechaTextbox.Text = DateTime.Now.ToString("yyyy-MM-dd");
             nombreTextbox.Text = "";
             cedulatextbox.Text = "";
@@ -156,17 +157,24 @@ namespace SoftwareContable_CB.Registros
 
             int id = Convert.ToInt32(usuarioid.Text);
 
-            if (repositorio.Eliminar(id))
+
+            var usuario = repositorio.Buscar(id);
+
+
+            if (usuario == null)
             {
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script:
-              "toastr.Success('Usuario a sido Borrado','Eliminado',{ 'progressBar': true,'positionClass': 'toast-bottom-right'});", addScriptTags: true);
-
-                Limpiar();
+               "toastr.info('Este Numero de Usuario no Existe','Informacion',{ 'progressBar': true,'positionClass': 'toast-bottom-right'});", addScriptTags: true);
             }
             else
             {
+                repositorio.Eliminar(id);
+
+             
+
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script:
-              "toastr.info('Este Numero de Usuario no Existe','Informacion',{ 'progressBar': true,'positionClass': 'toast-bottom-right'});", addScriptTags: true);
+               "toastr.success('Usuario a sido Borrado','Eliminado',{ 'progressBar': true,'positionClass': 'toast-bottom-right'});", addScriptTags: true);
+                Limpiar();
             }
 
         }

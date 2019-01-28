@@ -49,13 +49,22 @@ namespace SoftwareContable_CB.Consulta {
         protected global::System.Web.UI.WebControls.Button ButtonBuscar;
         
         /// <summary>
-        /// Label1 control.
+        /// CheckBoxFecha control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.CheckBox CheckBoxFecha;
+        
+        /// <summary>
+        /// Labeldesde control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Labeldesde;
         
         /// <summary>
         /// DesdeTextBox control.
@@ -67,13 +76,13 @@ namespace SoftwareContable_CB.Consulta {
         protected global::System.Web.UI.WebControls.TextBox DesdeTextBox;
         
         /// <summary>
-        /// Label2 control.
+        /// Labelhasta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label Labelhasta;
         
         /// <summary>
         /// HastaTextBox control.
