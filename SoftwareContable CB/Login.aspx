@@ -52,11 +52,6 @@
                         </div>
 
 
-                        <div class="row align-items-center remember">
-
-                            <input type="checkbox">Remember Me
-			
-                        </div>
 
                         <div class="form-group">
                             <asp:Button style="background-color:forestgreen" ID="ButtonLogin" runat="server" Text="Login" class="btn float-right login_btn" OnClick="ButtonLogin_Click"    />

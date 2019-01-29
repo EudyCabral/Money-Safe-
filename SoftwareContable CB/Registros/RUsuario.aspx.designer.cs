@@ -49,6 +49,15 @@ namespace SoftwareContable_CB.Registros {
         protected global::System.Web.UI.WebControls.TextBox FechaTextbox;
         
         /// <summary>
+        /// RequiredFieldValidatorNombre control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorNombre;
+        
+        /// <summary>
         /// nombreTextbox control.
         /// </summary>
         /// <remarks>
@@ -56,6 +65,15 @@ namespace SoftwareContable_CB.Registros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox nombreTextbox;
+        
+        /// <summary>
+        /// RequiredFieldValidatorCedula control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorCedula;
         
         /// <summary>
         /// cedulatextbox control.
@@ -76,6 +94,15 @@ namespace SoftwareContable_CB.Registros {
         protected global::AjaxControlToolkit.MaskedEditExtender MaskedEditExtenderced;
         
         /// <summary>
+        /// RequiredFieldValidatortel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatortel;
+        
+        /// <summary>
         /// Telefonoinput control.
         /// </summary>
         /// <remarks>
@@ -92,6 +119,15 @@ namespace SoftwareContable_CB.Registros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.MaskedEditExtender Telefonoinput_MaskedEditExtender;
+        
+        /// <summary>
+        /// RequiredFieldValidatorcel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorcel;
         
         /// <summary>
         /// celularinput control.
@@ -112,6 +148,15 @@ namespace SoftwareContable_CB.Registros {
         protected global::AjaxControlToolkit.MaskedEditExtender MaskedEditExtendercel;
         
         /// <summary>
+        /// RequiredFieldValidatorUsuario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorUsuario;
+        
+        /// <summary>
         /// Usuarioinput control.
         /// </summary>
         /// <remarks>
@@ -119,6 +164,15 @@ namespace SoftwareContable_CB.Registros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Usuarioinput;
+        
+        /// <summary>
+        /// RequiredFieldValidatoremail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatoremail;
         
         /// <summary>
         /// email control.
@@ -139,6 +193,15 @@ namespace SoftwareContable_CB.Registros {
         protected global::System.Web.UI.WebControls.DropDownList TipodeAccesodrop;
         
         /// <summary>
+        /// RequiredFieldValidatorpass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorpass;
+        
+        /// <summary>
         /// pwd control.
         /// </summary>
         /// <remarks>
@@ -146,6 +209,24 @@ namespace SoftwareContable_CB.Registros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox pwd;
+        
+        /// <summary>
+        /// RequiredFieldValidatorconfipass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorconfipass;
+        
+        /// <summary>
+        /// CompareValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator;
         
         /// <summary>
         /// confirmarpwd control.

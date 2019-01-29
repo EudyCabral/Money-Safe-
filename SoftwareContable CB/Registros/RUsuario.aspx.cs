@@ -73,6 +73,7 @@ namespace SoftwareContable_CB.Registros
             email.Text = usuarios.Email;
             TipodeAccesodrop.Text = usuarios.TipodeAcceso;
             pwd.Text = usuarios.Contraseña;
+            confirmarpwd.Text = usuarios.Contraseña;
 
         }
 
@@ -100,7 +101,15 @@ namespace SoftwareContable_CB.Registros
         protected void ButtonBuscar_Click(object sender, EventArgs e)
         {
             Repositorio<Usuarios> repositorio = new Repositorio<Usuarios>();
-            Usuarios usuario = repositorio.Buscar(Convert.ToInt32(usuarioid.Text));
+
+            if (string.IsNullOrWhiteSpace(usuarioid.Text))
+            {
+                usuarioid.Text = "0";
+            }
+           
+                Usuarios usuario = repositorio.Buscar(Convert.ToInt32(usuarioid.Text));
+       
+            
             if (usuario != null)
             {
                 LlenaCampos(usuario);
@@ -123,24 +132,27 @@ namespace SoftwareContable_CB.Registros
 
             bool paso = false;
 
-            if (usuarios.UsuarioId == 0)
+            if (Page.IsValid)
             {
-                paso = repositorio.Guardar(usuarios);
+                if (usuarios.UsuarioId == 0)
+                {
+                    paso = repositorio.Guardar(usuarios);
 
-            }
+                }
 
-            else
-            {
-                paso = repositorio.Modificar(usuarios);
-               
-            }
+                else
+                {
+                    paso = repositorio.Modificar(usuarios);
+
+                }
+
                 if (paso)
 
                 {
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script:
-                 "toastr.success('Usuario Registrado','Exito',{ 'progressBar': true,'positionClass': 'toast-bottom-right'});", addScriptTags: true);
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script:
+                     "toastr.success('Usuario Registrado','Exito',{ 'progressBar': true,'positionClass': 'toast-bottom-right'});", addScriptTags: true);
 
-                 }
+                }
 
                 else
 
@@ -148,16 +160,29 @@ namespace SoftwareContable_CB.Registros
                     ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script:
                  "toastr.error('No pudo Guardar','Fallo',{ 'progressBar': true,'positionClass': 'toast-bottom-right'});", addScriptTags: true);
                 }
-            Limpiar();
+                Limpiar();
+                return;
+            }
+         
+
+                 ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script:
+                 "toastr.error('Favor de Llenar los Campos Correspondiente','Registro Incompleto',{ 'progressBar': true,'positionClass': 'toast-bottom-right'});", addScriptTags: true);
+            
+          
+
         }
 
         protected void ButtonEliminar_Click(object sender, EventArgs e)
         {
             Repositorio<Usuarios> repositorio = new Repositorio<Usuarios>();
 
+
+            if (string.IsNullOrWhiteSpace(usuarioid.Text))
+            {
+                usuarioid.Text = "0";
+            }
+
             int id = Convert.ToInt32(usuarioid.Text);
-
-
             var usuario = repositorio.Buscar(id);
 
 
@@ -166,6 +191,7 @@ namespace SoftwareContable_CB.Registros
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script:
                "toastr.info('Este Numero de Usuario no Existe','Informacion',{ 'progressBar': true,'positionClass': 'toast-bottom-right'});", addScriptTags: true);
             }
+       
             else
             {
                 repositorio.Eliminar(id);
@@ -179,6 +205,6 @@ namespace SoftwareContable_CB.Registros
 
         }
 
-
+      
     }
 }
