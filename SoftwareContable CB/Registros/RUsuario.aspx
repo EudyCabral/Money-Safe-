@@ -8,9 +8,9 @@
     <asp:ScriptManager ID="ScriptManager" runat="server"></asp:ScriptManager>
 
     <div class="form-group container">
+        <asp:Label ID="Label1" runat="server" Text="Registro de Usuario"></asp:Label>
 
-
-        <h2 class="control-label" style="text-align: center">Registro de Usuario</h2>
+        <h2 class="control-label" style="text-align: center; ">Registro de Usuario</h2>
 
     </div>
 

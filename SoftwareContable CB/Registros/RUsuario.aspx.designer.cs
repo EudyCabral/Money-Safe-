@@ -22,6 +22,15 @@ namespace SoftwareContable_CB.Registros {
         protected global::System.Web.UI.ScriptManager ScriptManager;
         
         /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+        
+        /// <summary>
         /// usuarioid control.
         /// </summary>
         /// <remarks>

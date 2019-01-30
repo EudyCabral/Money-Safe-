@@ -26,11 +26,7 @@ namespace SoftwareContable_CB.Consulta
         
         protected void ButtonBuscar_Click(object sender, EventArgs e)
         {
-            if (paso)
-            {
-              
-                return;
-            }
+          
                 Expression<Func<Usuarios, bool>> filtro = x => true;
                 Repositorio<Usuarios> repositorio = new Repositorio<Usuarios>();
 
@@ -43,7 +39,7 @@ namespace SoftwareContable_CB.Consulta
                 {
                     case 0://ID
 
-                        id = Convert.ToInt32(TextCriterio.Text);
+                        id = util.Toint(TextCriterio.Text);
                         if (CheckBoxFecha.Checked == true)
                         {
                             filtro = x => x.UsuarioId == id && (x.Fecha >= desde && x.Fecha <= hasta);
@@ -229,69 +225,9 @@ namespace SoftwareContable_CB.Consulta
 
         }
 
-        private bool Validar(int error)
-        {
-            bool paso = false;
-            int num = 0;
-
-            if (error == 1 && string.IsNullOrEmpty(TextCriterio.Text))
-            {
-              
-                paso = true;
-            }
-            if (error == 2 && int.TryParse(TextCriterio.Text, out num) == false)
-            {
-          
-                paso = true;
-            }
-
-            if (error == 3 && int.TryParse(TextCriterio.Text, out num) == true)
-            {
-               
-                paso = true;
-            }
-
-            return paso;
-        }
-
-        bool paso = false;
-
-        protected void CustomValidator_ServerValidate(object source, ServerValidateEventArgs args)
-        {
-
-            int ejem = 0;
-            if (string.IsNullOrEmpty(TextCriterio.Text))
-            {
-                paso = true;
-                args.IsValid = true;
-                CustomValidator.ErrorMessage = "Debe introducir un numero en el criterio";
-                return;
-            }
+       
 
         
-            if (TipodeFiltro.SelectedIndex.Equals(1) && int.TryParse(TextCriterio.Text, out ejem) == true || string.IsNullOrEmpty(TextCriterio.Text))
-            {
-                paso = true;
-                args.IsValid = true;
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script:
-                  "toastr.error('Favor de Introducir nombre de Usuario','Error',{ 'progressBar': true,'positionClass': 'toast-bottom-right'});", addScriptTags: true);
-                return;
-            }
-
-            if (TipodeFiltro.SelectedIndex.Equals(2) && int.TryParse(TextCriterio.Text, out ejem) == true)
-            {
-                paso = true;
-                args.IsValid = true;
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script:
-                  "toastr.error('Favor de Introducir Nombre','Error',{ 'progressBar': true,'positionClass': 'toast-bottom-right'});", addScriptTags: true);
-                return;
-            }
-
-            else
-                args.IsValid = false;
-
-
-        }
     }
     
 }
