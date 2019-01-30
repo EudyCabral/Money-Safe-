@@ -11,22 +11,21 @@ namespace BLL
 {
     public class UsuarioRepositorio : Repositorio<Usuarios>
     {
-        public void Verificar(string usuario, string contrasena)
+        public bool Verificar(string usuario, string contrasena)
         {
+            bool paso = false;
+
              Repositorio<Usuarios> BLL = new Repositorio<Usuarios>();
             Expression<Func<Usuarios, bool>> filtrar = x => true;
-
-            Usuarios user = new Usuarios();
 
             filtrar = t => t.Usuario.Equals(usuario) && t.Contraseña.Equals(contrasena);
 
             if (BLL.GetList(filtrar).Count() != 0)
-                FormsAuthentication.RedirectFromLoginPage(user.Usuario, true);
-            else
             {
-               
-                return;
-            }
+                paso = true;
+                    }
+
+            return paso;
         }
     }
 }
