@@ -18,8 +18,14 @@ namespace SoftwareContable_CB
         protected void ButtonLogin_Click(object sender, EventArgs e)
         {
             UsuarioRepositorio repositorio = new UsuarioRepositorio();
-                
-                repositorio.Verificar(TextBoxenterUsuario.Text, TextBoxcontrasena.Text);
+
+
+            repositorio.Verificar(TextBoxenterUsuario.Text, TextBoxcontrasena.Text);
+
+           
         }
+
+  
+
     }
 }

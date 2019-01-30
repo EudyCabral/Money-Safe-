@@ -34,10 +34,11 @@
           
             <asp:Label ID="LabelCriterio" runat="server" Text="Criterio:" Style="width: 60px"></asp:Label>
             <div style="width: 370px">
+                <asp:CustomValidator ID="CustomValidator" runat="server" ErrorMessage="*" ControlToValidate="TextCriterio" OnServerValidate="CustomValidator_ServerValidate" ValidationGroup="ValidacionB">Favor de Llenar Casilla</asp:CustomValidator>
                 <asp:TextBox class="form-control" ID="TextCriterio" runat="server" Style="width: 350px"></asp:TextBox>
 
             </div>
-            <asp:Button ID="ButtonBuscar" runat="server" Text="Buscar" class="btn btn-info btn-md" OnClick="ButtonBuscar_Click" />
+            <asp:Button ValidationGroup="ValidacionB" ID="ButtonBuscar" runat="server" Text="Buscar" class="btn btn-info btn-md" OnClick="ButtonBuscar_Click" />
 
         </div>
 
@@ -68,8 +69,8 @@
                         <asp:GridView ID="UsuarioGridView" runat="server" class="table table-condensed table-bordered table-responsive" AutoGenerateColumns="false" CellPadding="4" ForeColor="#333333" GridLines="None">
                             <AlternatingRowStyle BackColor="LightSkyBlue" />
                             <Columns>
-                                <asp:BoundField DataField="UsuarioId" HeaderText="UsuarioId" />
 
+                                <asp:BoundField DataField="UsuarioId" HeaderText="UsuarioId" />
                                 <asp:BoundField DataField="Fecha" HeaderText="Fecha" />
                                 <asp:BoundField DataField="Nombre" HeaderText="Nombre" />
                                 <asp:BoundField DataField="Cedula" HeaderText="Cedula" />

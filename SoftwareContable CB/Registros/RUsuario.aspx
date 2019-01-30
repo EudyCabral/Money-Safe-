@@ -66,8 +66,9 @@
             <asp:RequiredFieldValidator ValidationGroup="ValidacionGuardar" ID="RequiredFieldValidatorUsuario" ControlToValidate="Usuarioinput" Display="Static" runat="server" ForeColor="Red" >*</asp:RequiredFieldValidator>
             <asp:TextBox runat="server" class="form-control" ID="Usuarioinput" type="text" Width="350px"></asp:TextBox>
 
+          <asp:RequiredFieldValidator ValidationGroup="ValidacionGuardar" ID="RequiredFieldValidatoremail" ControlToValidate="email" Display="Static" runat="server" ForeColor="Red" >*</asp:RequiredFieldValidator>           
+          <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="*" ControlToValidate="email" Text="Correo Incorrecto" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ValidationGroup="ValidacionGuardar" ForeColor="Red"></asp:RegularExpressionValidator>
             <label for="email">E-Mail :</label>
-            <asp:RequiredFieldValidator ValidationGroup="ValidacionGuardar" ID="RequiredFieldValidatoremail" ControlToValidate="email" Display="Static" runat="server" ForeColor="Red" >*</asp:RequiredFieldValidator>           
             <asp:TextBox runat="server" class="form-control" ID="email" type="text" Width="350px"></asp:TextBox>
 
             <label for="TipodeAccesodrop">TipodeAcceso :</label>

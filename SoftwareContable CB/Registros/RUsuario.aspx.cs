@@ -163,12 +163,6 @@ namespace SoftwareContable_CB.Registros
                 Limpiar();
                 return;
             }
-         
-
-                 ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script:
-                 "toastr.error('Favor de Llenar los Campos Correspondiente','Registro Incompleto',{ 'progressBar': true,'positionClass': 'toast-bottom-right'});", addScriptTags: true);
-            
-          
 
         }
 
