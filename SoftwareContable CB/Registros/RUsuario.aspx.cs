@@ -134,7 +134,7 @@ namespace SoftwareContable_CB.Registros
 
             if (Page.IsValid)
             {
-                if (usuarios.UsuarioId == 0)
+                if (usuarioid.Text == "0")
                 {
                     paso = repositorio.Guardar(usuarios);
 
@@ -142,8 +142,18 @@ namespace SoftwareContable_CB.Registros
 
                 else
                 {
-                    paso = repositorio.Modificar(usuarios);
+                    var verificar = repositorio.Buscar(util.Toint(usuarioid.Text));
 
+                    if (verificar != null)
+                    {
+                        paso = repositorio.Modificar(usuarios);
+                    }
+                    else
+                    {
+                        ScriptManager.RegisterStartupScript(this, typeof(Page), "toastr_message", script:
+                     "toastr.error('Usuario No Existe','Exito',{ 'progressBar': true,'positionClass': 'toast-bottom-right'});", addScriptTags: true);
+                        return;
+                    }
                 }
 
                 if (paso)
