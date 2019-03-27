@@ -63,14 +63,16 @@
 
                 <!-- Barra de Navegacion -->
                 <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
+ 
+
                     <!-- Brand -->
                     <a class="navbar-brand" href="#"><i class="fas fa-home"></i></a>
-
+               
                     <!-- Links -->
-                    <ul class="navbar-nav" style="width: 400px">
+                    <ul class="navbar-nav"  style="width: 400px">
                         <li class="nav-item">
 
-                            <a class="nav-link" href="http://localhost:57890/default.aspx">Inicio</a>
+                            <a class="nav-link" href="/default.aspx">Inicio</a>
                         </li>
 
                         <!-- Dropdown -->
@@ -86,7 +88,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="Registros" data-toggle="dropdown">Registros
                             </a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="http://localhost:57890/Registros/RUsuario.aspx#">Registro de Usuario</a>
+                                <a class="dropdown-item" href="/Registros/RUsuario.aspx#">Registro de Usuario</a>
                                 <a class="dropdown-item" href="#">Registro de Clientes</a>
                                 <a class="dropdown-item" href="#">Registro de Articulos</a>
                             </div>
@@ -96,7 +98,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="Consultas" data-toggle="dropdown">Consultas
                             </a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="http://localhost:57890/Consulta/CUsuario.aspx">Consulta Usuario</a>
+                                <a class="dropdown-item" href="/Consulta/CUsuario.aspx">Consulta Usuario</a>
                                 <a class="dropdown-item" href="#">Consulta Clientes</a>
                                 <a class="dropdown-item" href="#">Consulta Articulos</a>
                             </div>
